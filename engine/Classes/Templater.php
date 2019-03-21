@@ -10,12 +10,11 @@ class Templater
 {
     use SingletonTrait;
 
-    public $loader;
     public $twig;
 
     protected function __construct()
     {
-        $this->loader = new FilesystemLoader(TPL_DIR);
-        $this->twig = new Environment($this->loader);
+        $loader = new FilesystemLoader(TPL_DIR);
+        $this->twig = new Environment($loader);
     }
 }
