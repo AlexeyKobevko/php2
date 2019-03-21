@@ -1,24 +1,21 @@
 <?php
 
+namespace App;
+
+use App\Classes\DB;
+use App\Classes\Templater;
+use \PDO;
+
 require_once '../config/config.php';
+
+$twig = Templater::getInstance()->twig;
+$db = DB::getInstance();
 
 try {
 
-    $loader = new \Twig\Loader\FilesystemLoader('../templates');
-
-    $twig = new \Twig\Environment($loader);
-
     $template = $twig->load('gallery/gallery.html');
 
-    $dbh = new \PDO('mysql:dbname=geek_brains_shop;host=localhost', 'geek_brains', '789');
-
-    $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-    $sql = "SELECT * FROM `images2` ORDER BY `images2`.`views` DESC";
-    $sth = $dbh->prepare($sql);
-    $sth->execute();
-    $data = $sth->fetchAll(PDO::FETCH_OBJ);
-    unset($dbh);
+    $data = $db->fetchAll("SELECT * FROM `images2` ORDER BY `images2`.`views` DESC");
 
     echo $template->render([
         'nav' => $nav,

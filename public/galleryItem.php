@@ -1,32 +1,27 @@
 <?php
 
+namespace App;
+
+use App\Classes\DB;
+use App\Classes\Templater;
+use \PDO;
+
 require_once '../config/config.php';
+
+$twig = Templater::getInstance()->twig;
+$db = DB::getInstance();
 
 try {
 
-    $loader = new \Twig\Loader\FilesystemLoader('../templates');
-
-    $twig = new \Twig\Environment($loader);
-
     $template = $twig->load('gallery/galleryItem.html');
-
-    $dbh = new PDO('mysql:dbname=geek_brains_shop;host=localhost', 'geek_brains', '789');
-
-    $dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     $id = isset($_GET['id']) ? $_GET['id'] : false;
     $id = (int)$id;
 
-    $sql = "SELECT * FROM images2 WHERE `id` = $id";
-    $sth = $dbh->prepare($sql);
-    $sth->execute();
-    $data = $sth->fetchAll(PDO::FETCH_OBJ);
+    $data = $db->fetchAll("SELECT * FROM images2 WHERE `id` = $id");
 
     $views = $data[0]->views + 1;
-    $sth = $dbh->prepare("UPDATE `images2` SET `views` = $views WHERE `id` = $id");
-    $sth->execute();
-
-    unset($dbh);
+    $db->update("UPDATE `images2` SET `views` = $views WHERE `id` = $id");
 
     echo $template->render([
         'nav' => $nav,
