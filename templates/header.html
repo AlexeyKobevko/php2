@@ -1,8 +1,12 @@
 <!-- begin: header.html -->
 <div class="header">
-    <ul>
-        {% for item in nav.main %}
-        <li><a href="{{ item.url }}">{{ item.name|upper }}</a></li>
-        {% endfor %}
+    <ul class="main-menu">
+        <li class="main-menu-item">
+            <a class="main-menu-item-link" href="/">Главная</a>
+        </li>
+        <li class="main-menu-item">
+            <a class="main-menu-item-link" href="/gallery.php">Галерея</a>
+        </li>
     </ul>
 </div>
+<!-- end: header.html -->

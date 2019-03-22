@@ -2,6 +2,9 @@
   margin: 0
   padding: 0
 
+h1
+  text-align: center
+
 .container
   display: flex
   justify-content: center
@@ -23,13 +26,13 @@
   background-position: center
   opacity: 0.8
 
-ul
+.main-menu
   list-style-type: none
-  & li
+  & .main-menu-item
     display: inline-block
     margin-right: 10px
-
-a
-  text-decoration: none
-  color: white
-  font-size: 1rem
+    & .main-menu-item-link
+      text-decoration: none
+      color: white
+      font-size: 1rem
+      text-transform: uppercase

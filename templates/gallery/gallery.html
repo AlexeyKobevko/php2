@@ -1,26 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Галерея</title>
-    <link rel="stylesheet" href="/styles/main.css">
-</head>
-<body>
-<header>
-    {% include 'header.html' %}
-</header>
+{% extends "index.html" %}
 
+{% block greeting %}
+<h1>Галерея</h1>
+{% endblock %}
+
+{% block content %}
 <div class="container">
     <div class="gallery">
-        {% for d in data %}
+{% for image in images %}
         <div class="gallery-item">
-            <a href="/galleryItem.php?id={{ d.id|escape }}">
-                <img class="gallery-img" src="{{ d.url|escape }}" alt="{{ d.title|escape }}" width="250">
+            <a href="/image.php?id={{ image.id }}">
+                <img class="gallery-img" src="{{ image.url }}" alt="{{ image.title }}" width="250">
             </a>
         </div>
-        {% endfor %}
+{% endfor %}
     </div>
 </div>
 
-</body>
-</html>
+{% endblock %}

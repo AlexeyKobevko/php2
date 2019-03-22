@@ -7,8 +7,14 @@
 </head>
 <body>
 <header>
-    {% include 'header.html' %}
+{% include "header.html" %}
 </header>
+{% block greeting %}
 <h1>Добро пожаловать в мою домашнюю работу</h1>
+{% endblock %}
+
+{% block content %}
+
+{% endblock %}
 </body>
 </html>
