@@ -1,0 +1,24 @@
+{% extends "index.html" %}
+
+{% block title %}
+{{ product.name }}
+{% endblock %}
+
+{% block greeting %}
+<h1>{{ product.name }}</h1>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="product-wrapper">
+        <div class="product-item">
+            <img src="{{ product.image_big }}" alt="{{ product.name }}">
+            <div class="prod-desc-wrapper">
+                <div class="description">{{ product.description }}</div>
+                <div class="price"><span>Цена:</span> {{ product.price }} руб.</div>
+                <button class="buy">Купить</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

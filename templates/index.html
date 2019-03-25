@@ -2,7 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{{ title }}</title>
+    <title>
+        {% block title %}
+        Главная
+        {% endblock %}
+    </title>
     <link rel="stylesheet" href="/styles/main.css">
 </head>
 <body>
@@ -16,5 +20,7 @@
 {% block content %}
 
 {% endblock %}
+<script src="/js/jquery.min.js"></script>
+<script src="/js/main.js"></script>
 </body>
 </html>
