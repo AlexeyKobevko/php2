@@ -1,0 +1,9 @@
+{% for product in products %}
+<div class="catalog-item">
+    <a href="/product.php?id={{ product.id }}">
+        <img src="{{ product.image }}" alt="{{ product.name }}">
+    </a>
+    <div class="description">{{ product.name }}</div>
+    <div class="price">{{ product.price }}</div>
+</div>
+{% endfor %}
