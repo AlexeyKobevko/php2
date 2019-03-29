@@ -1,0 +1,8 @@
+<!-- begin: header.html -->
+<div class="header">
+    <ul>
+        {% for item in nav.main %}
+        <li><a href="{{ item.url }}">{{ item.name|upper }}</a></li>
+        {% endfor %}
+    </ul>
+</div>
