@@ -2,13 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{{ title }}</title>
+    <title>
+        {% block title %}
+        Главная
+        {% endblock %}
+    </title>
     <link rel="stylesheet" href="/styles/main.css">
 </head>
 <body>
 <header>
-    {% include 'header.html' %}
+{% include "header.html" %}
 </header>
+{% block greeting %}
 <h1>Добро пожаловать в мою домашнюю работу</h1>
+{% endblock %}
+
+{% block content %}
+
+{% endblock %}
+<script src="/js/jquery.min.js"></script>
+<script src="/js/main.js"></script>
 </body>
 </html>

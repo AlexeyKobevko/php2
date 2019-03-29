@@ -1,0 +1,22 @@
+{% extends "index.html" %}
+
+{% block title %}
+{{ image.title }}
+{% endblock %}
+
+{% block greeting %}
+
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="gallery">
+        <div class="gallery-item">
+            <h3>{{ image.title }}</h3>
+            <img class="gallery-img" src="{{ image.url }}" alt="{{ image.title }}">
+            <div class="views">Просмотров: {{ image.views|escape }}</div>
+            <button class="back" onclick="window.location.href='/gallery.php'">Назад</button>
+        </div>
+    </div>
+</div>
+{% endblock %}

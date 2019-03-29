@@ -1,8 +1,17 @@
 <!-- begin: header.html -->
 <div class="header">
-    <ul>
-        {% for item in nav.main %}
-        <li><a href="{{ item.url }}">{{ item.name|upper }}</a></li>
-        {% endfor %}
+    <div class="logo">
+        <a href="/"><img src="img/placeholder.com-logo2.png" alt=""></a>
+    </div>
+    <ul class="main-menu">
+        <li class="main-menu-item">
+            <a class="main-menu-item-link" href="/">Главная</a>
+        </li><li class="main-menu-item">
+            <a class="main-menu-item-link" href="/catalog.php">Каталог</a>
+        </li>
+        <li class="main-menu-item">
+            <a class="main-menu-item-link" href="/gallery.php">Галерея</a>
+        </li>
     </ul>
 </div>
+<!-- end: header.html -->

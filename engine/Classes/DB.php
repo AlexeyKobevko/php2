@@ -23,9 +23,14 @@ class DB
         return $sth->fetchAll(PDO::FETCH_OBJ);
     }
 
-    public function update($sql)
+    public function fetchOne($sql)
+    {
+        return $this->fetchAll($sql)[0] ?? null;
+    }
+
+    public function exec($sql, $parameters = [])
     {
         $sth = $this->pdo->prepare($sql);
-        return $sth->execute();
+        return $sth->execute($parameters);
     }
 }

@@ -1,0 +1,20 @@
+{% extends "index.html" %}
+
+{% block title %}
+Каталог
+{% endblock %}
+
+{% block greeting %}
+<h1>Каталог</h1>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="catalog">
+        {% include 'catalog/catalogList.html' %}
+    </div>
+    <div class="pagination">
+        <button class="pag-next">{{ "ещё"|upper }}</button>
+    </div>
+</div>
+{% endblock %}

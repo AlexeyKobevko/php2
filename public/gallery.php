@@ -12,11 +12,11 @@ try {
 
     $template = Templater::getInstance()->twig->load('gallery/gallery.html');
 
-    $data = DB::getInstance()->fetchAll("SELECT * FROM `images2` ORDER BY `images2`.`views` DESC");
+    $images = DB::getInstance()->fetchAll("SELECT * FROM `images2` ORDER BY `images2`.`views` DESC");
 
     echo $template->render([
-        'nav' => $nav,
-        'data' => $data,
+        'images' => $images,
+        'title' => 'Галлерея'
     ]);
 
 } catch (\Exception $e) {

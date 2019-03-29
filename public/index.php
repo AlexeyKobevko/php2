@@ -12,7 +12,6 @@ try {
 
     echo $template->render([
         'title' => 'Главная',
-        'nav' => $nav,
     ]);
 
 } catch (\Exception $e) {
