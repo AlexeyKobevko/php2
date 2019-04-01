@@ -25,7 +25,7 @@ function getProduct($id)
 //{
 //    $products = getProducts($perPage);
 //
-//    $template = Templater::getInstance()->twig->load('catalog/catalog.html');
+//    $template = Templater::getInstance()->twig->load('catalog/catalog.twig');
 //    return $template->render(['products' => $products]);
 //}
 
@@ -37,7 +37,7 @@ function showProduct($id)
         return '404';
     }
 
-    $template = Templater::getInstance()->twig->load('catalog/product.html');
+    $template = Templater::getInstance()->twig->load('catalog/product.twig');
 
     return $template->render(['product' => $product]);
 }

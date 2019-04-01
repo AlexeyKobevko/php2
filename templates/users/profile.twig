@@ -1,0 +1,18 @@
+{% extends "index.twig" %}
+
+{% block title %}Профиль{% endblock %}
+
+{% block greeting %}<h1>Профиль</h1>{% endblock %}
+
+{% block content %}
+    Здравствуйте, {{ user.name }}
+
+    Story:
+    <ul>
+        {% for item in story %}
+            <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+
+    <button id="logoutBtn">Выйти</button>
+{% endblock %}

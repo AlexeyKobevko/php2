@@ -1,4 +1,4 @@
-{% extends "index.html" %}
+{% extends "index.twig" %}
 
 {% block title %}
 Каталог
@@ -11,7 +11,7 @@
 {% block content %}
 <div class="container">
     <div class="catalog">
-        {% include 'catalog/catalogList.html' %}
+        {% include 'catalog/catalogList.twig' %}
     </div>
     <div class="pagination">
         <button class="pag-next">{{ "ещё"|upper }}</button>
