@@ -1,0 +1,17 @@
+{% extends "index.twig" %}
+
+{% block title %}Авторизация{% endblock %}
+
+{% block greeting %}<h1>Авторизация</h1>{% endblock %}
+
+{% block content %}
+<div class="login">
+    <div class="form">
+        <div class="errors"></div>
+        <input id="login" type="text" placeholder="Login" name="login">
+        <input id="password" type="password" placeholder="Password" name="password">
+        <button id="loginBtn">Войти</button>
+        <a href="/registration/">Зарегистрироваться</a>
+    </div>
+</div>
+{% endblock %}
